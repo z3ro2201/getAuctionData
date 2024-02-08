@@ -78,8 +78,8 @@ const auctionDataInsert = async (itemName, itemTier, itemAmount) => {
     const conn = initDb();
     await connectDb(conn);
     try {
-        const insertColumns = '(item_tier, item_name, item_amount, item_registDateTime)';
-        const insertQuery = 'INSERT INTO LOA_AUCTION_GEMS_PRICE ' + insertColumns + ' VALUES (?,?,?,NOW())';
+        const insertColumns = '(item_tier, item_name, item_amount, item_registDate, item_registDateTime)';
+        const insertQuery = 'INSERT INTO LOA_AUCTION_GEMS_PRICE ' + insertColumns + ' VALUES (?,?,?,NOW(),NOW())';
         const insertValues = [itemTier, itemName, itemAmount];
         const result = await queryDb(conn, insertQuery, insertValues);
         return result;
