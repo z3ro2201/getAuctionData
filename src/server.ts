@@ -92,6 +92,6 @@ const auctionDataInsert = async (itemName, itemTier, itemAmount) => {
 }
 
 // 매 시간마자 작업 스캐줄링
-cron.schedule('23 * * * *', () => {
+cron.schedule('0 * * * *', () => {
     main();
 })
