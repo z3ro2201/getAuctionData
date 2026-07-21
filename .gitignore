@@ -7,3 +7,4 @@ dist/
 .env.local
 .env.production
 .env.developmentg
+yarn.lock
