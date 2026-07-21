@@ -11,6 +11,8 @@ interface WandderTime {
   outTime: string;
 }
 
+const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
 // 로스트아크 API 주소
 const LOA_OPENAPI_URL: string = "https://developer-lostark.game.onstove.com/";
 const LOA_OPENAPI_KEY: string = process.env.LOSTARK_OPENAPI_KEY;
@@ -154,9 +156,11 @@ const fetchMaterial = async (item: Material) => {
 const main = async () => {
   for (const meterial of MaterialArray) {
     await fetchMaterial(meterial);
+    await delay(500);
   }
   for (const gemstone of gemstoneArray) {
     await fetchGemData(gemstone);
+    await delay(500);
   }
 };
 
